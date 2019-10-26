@@ -33,7 +33,7 @@ const regexNoSpaceBetweenCharacters = [
  * Trim extra spaces between characters from a string
  * @param str The string have to process
  */
-export function solospace(str: string) {
+export function prettystring(str: string) {
   return str
     .split("\n")
     .map(s =>
@@ -53,4 +53,4 @@ export function solospace(str: string) {
     .join("\n");
 }
 
-export default solospace;
+export default prettystring;
