@@ -12,6 +12,16 @@ test(function stringWithExtraSpaces() {
   );
 });
 
+test(function stringWithTabs() {
+  const actual = prettystring(
+    "prettystring	can	make	a paragraph			looks		better			!\n   Than good  .  "
+  );
+  assertEquals(
+    actual,
+    "prettystring can make a paragraph looks better!\nThan good."
+  );
+});
+
 test(function stringWithoutExtraSpaces() {
   const actual = prettystring(
     "prettystring can make a paragraph looks better!\nThan good."
@@ -43,11 +53,19 @@ test(function stringInStringTemplate() {
 
 test(function stringAreNoNeedSpacesBetweenCharacters() {
   const actual = prettystring(
-    "  這個    prettystring    可   以  使段落看  起來  更好  ！\n     良     い  で  す   。  ε٩(๑>    ₃ <)۶з"
+    "  この    prettystring   は  段  落　　をよ  り良 くす　るこ   とがで   きます  。  \n     良     い  で  す   。  ε٩(๑>    ₃ <)۶з"
   );
   assertEquals(
     actual,
-    "這個 prettystring 可以使段落看起來更好！\n良いです。 ε٩(๑> ₃ <)۶з"
+    "この prettystring は段落をより良くすることができます。\n良いです。 ε٩(๑> ₃ <)۶з"
+  );
+});
+
+test(function stringAreNoNeedSpacesBetweenCharactersWithComma() {
+  const actual = prettystring("  這個 　 prettystring   ，　　可   以  使段落看  起來  更好  ！");
+  assertEquals(
+    actual,
+    "這個 prettystring，可以使段落看起來更好！"
   );
 });
 
