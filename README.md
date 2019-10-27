@@ -5,7 +5,7 @@
 ## Usage
 
 ```ts
-import prettystring from "https://raw.githubusercontent.com/OnikurYH/deno-prettystring/master/mod.ts";
+import prettystring from "https://deno.land/x/prettystring/mod.ts";
 
 const formattedEnglish = prettystring(
   "prettystring    can  make     a paragraph   looks      better    !"
